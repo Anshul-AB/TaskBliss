@@ -1,0 +1,18 @@
+.navbar{
+    background-color: var(--main-blue);
+    transition: all 0.6s ease 0s;
+    position: sticky;
+}
+.nav-list>li{
+    margin:0px 20px;
+}
+
+.nav-list>li :hover{
+    border-bottom: 2px solid rgb(250 204 21);
+    color:yellow;
+    transition: all 0.3s ease 0s;
+}
+
+.colored-icon{
+    color: var(--main-yellow);
+}
