@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import "./Signup.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -8,9 +8,12 @@ import HeadingDiv from "./HeadingDiv";
 import { useDispatch } from "react-redux";
 import { authActions } from "../../Store/store";
 
+
 const Signin = () => {
   const navigateTo = useNavigate();
   const dispatch = useDispatch();
+
+  
 
   const [inputs, setInputs] = useState({
     email: "",
@@ -41,13 +44,14 @@ const Signin = () => {
         toast.error("Invalid Email or Password");
       }
     } catch (error) {
-      console.error(error.message);
+      console.error("Error during sign-in:", error);
+    toast.error("An error occurred during sign-in");
     }
   };
 
   return (
     <div>
-      <div className="flex-center height">
+      <div className="flex-center height responsiveSign">
         <ToastContainer />
         {/* Right */}
         <div className="w-2/3 signup-inputs flex-column w-100">

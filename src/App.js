@@ -1,39 +1,43 @@
 import "./App.css";
-import Footer from "./components/Footer/Footer";
-import Home from "./components/Home/Home";
-import Navbar from "./components/Navbar/Navbar";
-import Signin from "./components/Signup/Signin";
-import Signup from './components/Signup/Signup';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Todo from "./components/Todo/Todo";
-import About from "./components/About/About";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { authActions } from "./Store/store";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Home/Home";
+import About from "./components/About/About";
+import Todo from "./components/Todo/Todo";
+import Contact from "./components/Contact/Contact.jsx";
+import Signup from "./components/Signup/Signup";
+import Signin from "./components/Signup/Signin";
+import Footer from "./components/Footer/Footer";
+import UserIdContext from "./CreateContext/userIdContext.jsx";
 
 function App() {
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const id = sessionStorage.getItem("id");
   useEffect(() => {
-    const id = sessionStorage.getItem("id");
-    if(id){
+    if (id) {
       dispatch(authActions.login());
     }
-  }, [])
-  
+  }, [dispatch, id]);
+
   return (
     <>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/about" element={<About/>} />
-          <Route path="/todo" element={<Todo/>} />
-          <Route path="/signup" element={<Signup/>} />
-          <Route path="/signin" element={<Signin/>} />
-        </Routes>
-      </Router>
-        <Footer/>
+      <UserIdContext>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/todo" element={<Todo />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/signin" element={<Signin />} />
+          </Routes>
+        </Router>
+        <Footer />
+      </UserIdContext>
     </>
   );
 }

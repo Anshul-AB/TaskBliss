@@ -1,5 +1,6 @@
 .todo-input {
   width: 60vw;
+  background-color: rgb(236, 232, 232);
   outline: none;
   margin-bottom: 4px;
   border: 1px 1px 0 solid var(--main-navy);
@@ -19,8 +20,8 @@
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: #fff;
-  background-color: var(--main-navy);
+  color:black;
+  background-color: var(--card-lavender);
   border: none;
   border-radius: 15px;
   box-shadow: 0 7px #999;
@@ -71,4 +72,11 @@
   font-weight: bolder;
 }
 
+/* RESPONSIVE */
 
+@media (max-width:768px) {
+  .resTodoCard{
+    display: flex;
+    margin: 0 auto;
+  }
+}

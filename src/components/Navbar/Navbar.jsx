@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { LuClipboardSignature } from "react-icons/lu";
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../../Store/store";
+import UserContext from "../../CreateContext/Context";
 
 const Navbar = () => {
   const navigateTo = useNavigate();
   const dispatch = useDispatch();
+
+  //getting user id from useContext hook 
+  const userId = useContext(UserContext);
+  const handleLogin = userId.handleLogin;
+  const id = userId.id;
+
+
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const logout = () => {
-    sessionStorage.clear("id");
+    // sessionStorage.clear("id");
+    sessionStorage.removeItem("id");
     dispatch(authActions.logout());
     navigateTo("/");
   };
@@ -34,7 +43,7 @@ const Navbar = () => {
             <Link to="/about">About</Link>
           </li>
           <li>
-            <Link to="/todo">To-Do</Link>
+            <Link to="/todo" onClick={()=>handleLogin(id)}>To-Do</Link>
           </li>
           <li>
             <Link to="/contact">Contact</Link>

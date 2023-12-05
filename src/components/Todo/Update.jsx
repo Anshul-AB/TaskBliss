@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { RxExit } from "react-icons/rx";
+import { toast } from "react-toastify";
 
 const Update = ({ exitUpdate, update }) => {
 
@@ -30,6 +31,7 @@ const Update = ({ exitUpdate, update }) => {
         exitUpdate("none")
     } catch (error) {
       console.error(error.message);
+      toast.error("Cannot Update Task, Please Sign in.")
     }
   };
 

@@ -1,0 +1,50 @@
+.contactForm input, textarea{
+    padding: 10px;
+    margin: 10px 0px;
+    outline: none;
+    width: 90%;
+    background-color: var(--card-lavender);
+    border-radius: 5px;
+}
+.contactForm input:hover{
+    background-color: lavenderblush;
+}
+
+.contactForm textarea{
+    padding: 10px;
+    margin: 10px 0px;
+    outline: none;
+    width: 90%;
+    background-color: var(--card-lavender);
+    border-radius: 5px;
+}
+
+.formSuccess{
+    color: rgb(135, 65, 158);
+    font-size: 30px;
+    background-color: lavender;
+    border: 1px solid rgb(135, 65, 158);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.contactForm h1{
+ color:rgb(135, 65, 158);
+ font-size: 35px;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width:800px) {
+    .resContact{
+        
+        display: flex;
+        flex-direction: column;
+    }
+    .contactForm{
+        width: 100%;
+    }
+    .contactMe{
+        width: 100%;
+    }
+}

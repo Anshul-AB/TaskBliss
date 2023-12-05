@@ -47,7 +47,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex-center height">
+    <div className="flex-center height responsiveSign">
       <ToastContainer />
       {/* left */}
       <div className="w-1/3 signup-text flex-center text-8xl">
@@ -55,7 +55,7 @@ const Signup = () => {
       </div>
 
       {/* Right */}
-      <div className="w-2/3 signup-inputs flex-column w-100">
+      <div className="w-2/3 signup-inputs flex-column ">
         <input
           type="email"
           name="email"

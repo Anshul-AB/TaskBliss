@@ -8,12 +8,16 @@ const Home = () => {
   const isLoggedIn = useSelector((state)=> state.isLoggedIn);
 
   return (
-    <div className=" home height">
-      <div className="grid grid-cols-2  pt-10 pb-10  ">
+    <div className=" home height ">
+      <div className="resHome container grid grid-cols-2 pt-10 pb-10">
         {/* left */}
-        <div className="text-5xl flex-center ">
-          Creating Harmony <br />
-          in Your Daily Routine.
+        <div className="homeLeft flex-column md:mb-7">
+          <h1>Creating Harmony <br/>
+          in Your Daily Routine.</h1>
+          <p>
+            TaskBliss transforms chaos into choreography,<br/> letting you dance
+            through your day.
+          </p>
         </div>
 
         {/* Right */}

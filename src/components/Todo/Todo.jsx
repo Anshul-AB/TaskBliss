@@ -1,15 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./Todo.css";
 import TodoCard from "./TodoCard";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import Update from "./Update";
 import "./Update.css";
+import UserContext from "../../CreateContext/Context";
 
-let id = sessionStorage.getItem("id");
+// let id = sessionStorage.getItem("id");
 let toUpdateArray = [];
 
 const Todo = () => {
+
+  //getting user id from useContext hook 
+  const userId = useContext(UserContext);
+  const id = userId.id;
+  const handleLogin = userId.handleLogin;
+
   const [inputs, setInputs] = useState({
     title: "",
     body: "",
@@ -19,6 +26,7 @@ const Todo = () => {
   const [submitted, setSubmitted] = useState(false);
 
   //colors generator
+  // eslint-disable-next-line
   const [initialColors, setInitialColors] = useState([]);
   const colors = [
     "rgb(255,179,186)",
@@ -26,6 +34,8 @@ const Todo = () => {
     "rgb(255,255,186)",
     "rgb(186,255,201)",
     "rgb(186,225,255)",
+    "rgb(224, 208, 245)",
+    "rgb(252, 228, 186)",
   ];
 
   const change = (e) => {
@@ -63,6 +73,8 @@ const Todo = () => {
         setInputs({ title: "", body: "" });
         toast.success("Task Added");
         setSubmitted(true);
+          //reset the state back to false
+        setSubmitted(false);
       } else {
         setArray([...array, inputs]);
         setInputs({ title: "", body: "" });
@@ -71,6 +83,7 @@ const Todo = () => {
       }
     } catch (error) {
       console.error(error.message);
+      toast.error("Error occured adding the tasks.");
     }
   };
 
@@ -102,30 +115,38 @@ const Todo = () => {
 
   //useEffect to render bg-colors and array on every refresh
   useEffect(() => {
-    // Store initial colors
-    setInitialColors([...colors]);
+    
+    setInitialColors([...colors]);  // Store initial colors
+    handleLogin(id);
+
 
     // Fetch data and set colors
-      const myList = async () => {
-        await axios
-          .get(`http://localhost:5000/api/v2/getTasks/${id}`)
-          .then((response) => {
-            setArray(
-              response.data.list.map((item, index) => ({
-                ...item,
-                color: colors[index % colors.length],
-              }))
-            );
-          });
-      };
+    const myList = async () => {
+      try {
+        if(id){
+          const response = await axios.get(`http://localhost:5000/api/v2/getTasks/${id}`);
+          setArray(
+            (response.data.list ?? []).map((item, index) => ({
+              ...item,
+              color: colors[index % colors.length],
+            }))
+          );
+        }
+      } catch (error) {
+        console.error('An error occurred:', error);
+      }
+    };
       myList();
+      // eslint-disable-next-line
   }, [id, submitted, array]);
+
+  console.log(id);
 
   return (
     <>
       <div className="height relative">
         <ToastContainer />
-        <div className="flex-column mt-10">
+        <div className="flex-column mt-10 container">
           <input
             type="text"
             name="title"
@@ -145,12 +166,12 @@ const Todo = () => {
             className="hidden todo-input"
           />
           <button className="todoAdd-btn mb-10" onClick={submit}>
-            Add Task
+            Add 
           </button>
         </div>
 
-        <div className="container min-h-screen flex-grow">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-5 ">
+        <div className="resTodocard container min-h-screen flex-grow">
+          <div className=" container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-5 ">
             {array &&
               array.map((item, index) => (
                 <div key={index} style={{ backgroundColor: item.color }}>

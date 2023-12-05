@@ -17,6 +17,9 @@
   --card-lime: rgb(255,255,186);
   --card-sea: rgb(186,255,201);
   --card-sky: rgb(186,225,255);
+  --card-lavender: rgb(224, 208, 245);
+  --card-gray:rgb(183, 202, 180);
+  --card-yellow:rgb(252, 228, 186);
 }
 
 .flex-center {
