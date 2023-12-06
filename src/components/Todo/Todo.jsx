@@ -62,7 +62,7 @@ const Todo = () => {
       }
       if (id) {
         const response = await axios.post(
-          "http://localhost:5000/api/v2/addTask",
+          `${window.location.origin}/api/v2/addTask`,
           {
             title: inputs.title,
             body: inputs.body,
@@ -92,7 +92,7 @@ const Todo = () => {
     try {
       if (id) {
         await axios
-          .delete(`http://localhost:5000/api/v2/deleteTask/${cardId}`, {
+          .delete(`${window.location.origin}/api/v2/deleteTask/${cardId}`, {
             data: { id: id },
           })
           .then((response) => {
@@ -110,7 +110,6 @@ const Todo = () => {
   // The index of array to be updated
   const update = (value) => {
     toUpdateArray = array[value];
-    console.log("two", toUpdateArray);
   };
 
   //useEffect to render bg-colors and array on every refresh
@@ -119,12 +118,11 @@ const Todo = () => {
     setInitialColors([...colors]);  // Store initial colors
     handleLogin(id);
 
-
     // Fetch data and set colors
     const myList = async () => {
       try {
         if(id){
-          const response = await axios.get(`http://localhost:5000/api/v2/getTasks/${id}`);
+          const response = await axios.get(`${window.location.origin}/api/v2/getTasks/${id}`);
           setArray(
             (response.data.list ?? []).map((item, index) => ({
               ...item,
@@ -139,8 +137,6 @@ const Todo = () => {
       myList();
       // eslint-disable-next-line
   }, [id, submitted, array]);
-
-  console.log(id);
 
   return (
     <>

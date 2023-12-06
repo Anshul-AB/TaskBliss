@@ -27,7 +27,7 @@ const Signup = () => {
         toast.error("Please provide all fields")
       }
       const response = await axios.post(
-        "http://localhost:5000/api/v1/signup",
+        `${window.location.origin}/api/v1/signup`,
         inputs
       );
 

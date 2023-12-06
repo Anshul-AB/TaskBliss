@@ -29,7 +29,7 @@ const Signin = () => {
     try {
       e.preventDefault();
       const response = await axios.post(
-        "http://localhost:5000/api/v1/signin",
+        `${window.location.origin}/api/v1/signin`,
         inputs
       );
 
