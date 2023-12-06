@@ -26,7 +26,7 @@ const Update = ({ exitUpdate, update }) => {
   const submit = async () => {
     try {
       await axios
-        .put(`${window.location.origin}/api/v2/updateTask/${update._id}`, inputs)
+        .put(`http://localhost:5000/api/v2/updateTask/${update._id}`, inputs)
         .then((response) => console.log(response));
         exitUpdate("none")
     } catch (error) {

@@ -62,7 +62,7 @@ const Todo = () => {
       }
       if (id) {
         const response = await axios.post(
-          `${window.location.origin}/api/v2/addTask`,
+          `http://localhost:5000/api/v2/addTask`,
           {
             title: inputs.title,
             body: inputs.body,
@@ -92,7 +92,7 @@ const Todo = () => {
     try {
       if (id) {
         await axios
-          .delete(`${window.location.origin}/api/v2/deleteTask/${cardId}`, {
+          .delete(`http://localhost:5000/api/v2/deleteTask/${cardId}`, {
             data: { id: id },
           })
           .then((response) => {
@@ -122,7 +122,7 @@ const Todo = () => {
     const myList = async () => {
       try {
         if(id){
-          const response = await axios.get(`${window.location.origin}/api/v2/getTasks/${id}`);
+          const response = await axios.get(`http://localhost:5000/api/v2/getTasks/${id}`);
           setArray(
             (response.data.list ?? []).map((item, index) => ({
               ...item,

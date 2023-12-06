@@ -30,7 +30,7 @@ const Contact = () => {
       }
       if (id) {
         await axios
-          .post(`${window.location.origin}/api/v3/contact`, inputs)
+          .post(`http://localhost:5000/api/v3/contact`, inputs)
           .then((response) => console.log(response));
         setFormSubmitted(true);
         toast.success("Contact form submitted.");
