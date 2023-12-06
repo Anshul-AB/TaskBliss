@@ -15,12 +15,12 @@ import UserIdContext from "./CreateContext/userIdContext.jsx";
 
 function App() {
   const dispatch = useDispatch();
-  const id = sessionStorage.getItem("id");
   useEffect(() => {
+    const id = sessionStorage.getItem("id");
     if (id) {
       dispatch(authActions.login());
     }
-  }, [dispatch, id]);
+  }, [dispatch]);
 
   return (
     <>
