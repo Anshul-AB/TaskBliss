@@ -1,0 +1,67 @@
+.signup-text {
+  color: var(--main-pink);
+}
+
+.signup-inputs input {
+  border: 1px solid var(--main-navy);
+  outline: none;
+  width: 70%;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 4px;
+}
+
+input :hover {
+  border-right: 3px solid var(--main-navy);
+}
+
+.btn {
+  background-color: initial;
+  background-image: linear-gradient(
+    -180deg,
+    var(--main-pink),
+    rgb(199, 121, 121)
+  );
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 35%;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow 0.2s;
+}
+
+.btn:hover {
+  box-shadow: rgba(253, 99, 112 0.5) 0 3px 8px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+  .responsiveSign {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .responsiveSign div {
+    margin-bottom: 20px;
+  }
+  .signup-text {
+    text-align: center;
+  }
+}

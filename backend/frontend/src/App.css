@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --main-blue: rgb(48, 152, 242);
+  --main-yellow: rgb(250 204 21);
+  --main-pink: rgb(253, 99, 112);
+  --main-navy: rgb(8, 44, 78);
+  
+  --card-pink:rgb(255,179,186);
+  --card-orange:	rgb(255,223,186);
+  --card-lime: rgb(255,255,186);
+  --card-sea: rgb(186,255,201);
+  --card-sky: rgb(186,225,255);
+  --card-lavender: rgb(224, 208, 245);
+  --card-gray:rgb(183, 202, 180);
+  --card-yellow:rgb(252, 228, 186);
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.height {
+  min-height: 100vh;
+}
+
+.btn-main{
+  
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  text-align: center;
+  border: 0;
+  padding: 7px 16px;
+  min-height: 36px;
+  min-width: 36px;
+  color: #ffffff;
+  background: #008060;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+}
+
+.btn-main:hover {
+    background: #006e52;
+}

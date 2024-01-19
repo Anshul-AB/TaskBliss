@@ -1,0 +1,82 @@
+.todo-input {
+  width: 60vw;
+  background-color: rgb(236, 232, 232);
+  outline: none;
+  margin-bottom: 4px;
+  border: 1px 1px 0 solid var(--main-navy);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.todoAdd-btn {
+  display: inline-block;
+  width: 25vw;
+  padding: 5px 10px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color:black;
+  background-color: var(--card-lavender);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 7px #999;
+}
+.todoAdd-btn:hover {
+  background-color: var(--main-pink);
+}
+
+.todoAdd-btn:active {
+  color: black;
+  box-shadow: 0 5px #9c9c9c;
+  transform: translateY(4px);
+}
+
+/* TODOCARDS */
+
+.todoCard {
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  height: 12rem;
+}
+
+.todocardInputs h4 {
+  font-weight: 600;
+}
+
+.todoCard-btn {
+  padding: 4px;
+  margin: 3px;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+
+.update-icon {
+  color: var(--main-blue);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.todoCard-btn:hover {
+  font-weight: bolder;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:768px) {
+  .resTodoCard{
+    display: flex;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,62 @@
+.home{
+  position: relative;
+  background-color: var(--main-blue);
+}
+
+/* left */
+.homeLeft h1{
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--card-lavender);
+  text-align: center;
+}
+.homeLeft p{
+  font-size: 1.5rem;
+  color: var(--card-pink);
+  text-align: center;
+}
+
+/* right */
+.btn-home {
+  width: 100%;
+  padding: 5px;
+  border-bottom: 1.88px solid rgb(121, 62, 62);
+}
+.btn-home:hover {
+  border-bottom: 1px solid white;
+}
+
+.signUpbtn{
+  color: var(--main-pink);
+  font-weight: 500;
+}
+.signUpbtn:hover{
+ font-weight: 700;
+}
+
+.box-shadow {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 900px) {
+  .resHome{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin-right: auto;
+  margin-left: auto;
+  width:fit-content;
+  }
+}
+
+@media (max-width:650px){
+  .homeLeft h1{
+    font-size: 2rem;
+  }
+  .homeLeft p{
+    font-size: 1.2rem;
+  }
+  .homeLeft{
+    margin-bottom: 20px;
+  }
+}

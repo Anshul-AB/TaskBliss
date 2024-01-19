@@ -1,0 +1,6 @@
+.footer{
+    height: 6rem;
+    background-color: var(--main-navy);
+    color: var(--card-sky);
+    font-size: 14px;
+}
