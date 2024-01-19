@@ -52,7 +52,7 @@ const Home = () => {
 
             {isLoggedIn &&
               <>
-              <button className="btn-home text-xl">
+              <button className="btn-home text-md signUpbtn">
               <Link to='/todo'>
               Yaey, Click here to start.
               </Link>
