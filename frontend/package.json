@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "taskbliss-tood": "file:.."
+  }
+}
