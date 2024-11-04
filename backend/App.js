@@ -28,5 +28,7 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is listening at port ${port}`);
+  console.log(`Server running on port ${port}`);
+}).on('error', (err) => {
+  console.error('Error starting server:', err);
 });
