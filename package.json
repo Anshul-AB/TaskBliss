@@ -7,7 +7,7 @@
     "dev": "nodemon backend/app.js",
     "build:both": "npm install && npm install --prefix backend/frontend && npm run build --prefix backend/frontend",
     "build": "npm run build:both",
-    "start":"nodemon backend/app.js"
+    "start": "nodemon backend/app.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,5 +20,8 @@
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.1",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }
