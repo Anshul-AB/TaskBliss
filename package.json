@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev":"nodemon backend/app.js",
-    "build:all":"npm install && npm install --prefix frontend && npm run build --prefix frontend",
-    "start":"nodemon backend/app.js"
+    "dev": "nodemon backend/app.js",
+    "build:both": "npm install && npm install --prefix backend/frontend && npm run build --prefix backend/frontend",
+    "build": "npm run build:both"
   },
   "author": "",
   "license": "ISC",
