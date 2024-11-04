@@ -7,7 +7,7 @@
     "dev": "nodemon backend/app.js",
     "build:both": "npm install && npm install --prefix backend/frontend && npm run build --prefix backend/frontend",
     "build": "npm run build:both",
-    "start": "node backend/app.js"
+    "start": "node backend/App.js"
   },
   "author": "",
   "license": "ISC",
