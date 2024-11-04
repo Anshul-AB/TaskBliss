@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon backend/app.js",
     "build:both": "npm install && npm install --prefix backend/frontend && npm run build --prefix backend/frontend",
-    "build": "npm run build:both"
+    "build": "npm run build:both",
+    "start":"nodemon backend/app.js"
   },
   "author": "",
   "license": "ISC",
